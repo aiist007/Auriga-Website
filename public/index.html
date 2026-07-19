@@ -10,7 +10,8 @@
 <helmet>
 <title>Auriga · 凌云座 — A private members' club, at altitude.</title>
 <meta name="description" content="Whole cabins, private terminals, and rooms worth walking into. A private flying club for the next generation. By invitation." />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet"></noscript>
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#F5F1E8;color:#16130E;font:16px/1.75 'Helvetica Neue','PingFang SC','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
@@ -18,6 +19,15 @@ a{color:#16130E}a:hover{color:#A5834B}
 ::selection{background:#A5834B;color:#F5F1E8}
 summary::-webkit-details-marker{display:none}
 input,select,button{font:inherit}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+img,image-slot{max-width:100%}
+@media (max-width:600px){
+  #langToggle{padding:14px 0 !important}
+  #auriga-root summary{padding:8px 0 !important}
+  #auriga-root #join select{padding-top:12px !important;padding-bottom:12px !important}
+  #auriga-root footer{padding-bottom:calc(84px + env(safe-area-inset-bottom)) !important}
+}
 </style>
 <script src="image-slot.js"></script>
 <meta name="ext-resource-dependency" content="pic/hero-golden.webp" data-resource-id="hero-golden" />
