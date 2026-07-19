@@ -36,33 +36,24 @@ export async function handleApply(request, env) {
     ['理想的飞行', note || '—'],
   ];
 
-  const res = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/email/sending/send`,
-    {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.CF_API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        to: TO,
-        from: FROM,
-        subject: `Auriga 申请 · ${name}${city ? ` · ${city}` : ''}`,
-        text: rows.map(([k, v]) => `${k}：${v}`).join('\n'),
-        html: rows.map(([k, v]) => `<p><strong>${k}</strong><br>${esc(v)}</p>`).join(''),
-        headers: { 'Reply-To': email },
-      }),
-    }
-  );
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: FROM,
+      to: [TO],
+      reply_to: email,
+      subject: `Auriga 申请 · ${name}${city ? ` · ${city}` : ''}`,
+      text: rows.map(([k, v]) => `${k}：${v}`).join('\n'),
+      html: rows.map(([k, v]) => `<p><strong>${k}</strong><br>${esc(v)}</p>`).join(''),
+    }),
+  });
 
   if (!res.ok) {
-    console.error('email send failed', res.status, await res.text());
-    return json({ error: 'send_failed' }, 502);
-  }
-
-  const result = await res.json();
-  if (!result.success) {
-    console.error('email send rejected', JSON.stringify(result.errors));
+    console.error('resend send failed', res.status, await res.text());
     return json({ error: 'send_failed' }, 502);
   }
 
