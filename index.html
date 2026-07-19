@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Auriga · 凌云座 — A private members' club, at altitude.</title>
+<meta name="description" content="Whole cabins, private terminals, and rooms worth walking into. A private flying club for the next generation. By invitation." />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;family=Noto+Serif+SC:wght@700;900&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F5F1E8;color:#16130E;font:16px/1.75 'Helvetica Neue','PingFang SC','Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#16130E}a:hover{color:#A5834B}
+::selection{background:#A5834B;color:#F5F1E8}
+summary::-webkit-details-marker{display:none}
+input,select,button{font:inherit}
+</style>
+<script src="image-slot.js"></script>
+<meta name="ext-resource-dependency" content="pic/hero-golden.webp" data-resource-id="hero-golden" />
+<meta name="ext-resource-dependency" content="pic/scene-golden-hour.webp" data-resource-id="scene-golden-hour" />
+<meta name="ext-resource-dependency" content="pic/scene-vegas.webp" data-resource-id="scene-vegas" />
+<meta name="ext-resource-dependency" content="pic/scene-powder.webp" data-resource-id="scene-powder" />
+<meta name="ext-resource-dependency" content="pic/scene-graduation.webp" data-resource-id="scene-graduation" />
+<meta name="ext-resource-dependency" content="pic/scene-party.webp" data-resource-id="scene-party" />
+<meta name="ext-resource-dependency" content="pic/scene-office.webp" data-resource-id="scene-office" />
+</helmet>
+<template id="__bundler_thumbnail" data-bg-color="#F5F1E8"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#F5F1E8"></rect><circle cx="60" cy="60" r="34" fill="none" stroke="#16130E" stroke-width="1"></circle><polyline points="60,38 76,50 71,71 50,73 45,52 60,38" fill="none" stroke="#16130E" stroke-width="0.8"></polyline><circle cx="60" cy="38" r="1.6" fill="#16130E"></circle><circle cx="76" cy="50" r="1.2" fill="#16130E"></circle><circle cx="71" cy="71" r="1.2" fill="#16130E"></circle><circle cx="50" cy="73" r="1.2" fill="#16130E"></circle><circle cx="45" cy="52" r="1.2" fill="#16130E"></circle></svg></template>
+<div id="auriga-root">
+
+<!-- HEADER -->
+<div data-screen-label="Header" style="max-width:1140px;margin:0 auto;padding:0 32px">
+  <header style="display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:1px solid rgba(22,19,14,.16)">
+    <div style="display:flex;align-items:center;gap:16px">
+      <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:17px;letter-spacing:.42em;text-indent:.42em">AURIGA</span>
+      <span style="width:1px;height:16px;background:rgba(22,19,14,.16)"></span>
+      <span style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:12px;letter-spacing:.4em;text-indent:.4em;color:#6E675C">凌云座</span>
+    </div>
+    <button id="langToggle" onClick="{{ toggleLang }}" style="background:none;border:none;cursor:pointer;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#16130E;padding:6px 0;display:flex;gap:9px;align-items:center">
+      <span data-l-zh="1">中文</span><span style="color:rgba(22,19,14,.3)">/</span><span data-l-en="1" style="opacity:.35">EN</span>
+    </button>
+  </header>
+</div>
+
+<!-- HERO -->
+<section data-screen-label="Hero" style="max-width:1140px;margin:0 auto;padding:0 32px">
+  <div style="padding:116px 0 72px;text-align:center">
+    <div data-cn="1" style="font-size:11px;letter-spacing:.38em;text-indent:.38em;text-transform:uppercase;color:#A5834B">私人会员俱乐部 · 凭邀请加入</div>
+    <div data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-indent:.38em;text-transform:uppercase;color:#A5834B">A private members&#39; club · By invitation</div>
+    <h1 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(40px,5.8vw,68px);line-height:1.22;letter-spacing:.04em;margin:34px 0 30px">飞行，<br>本来的样子。</h1>
+    <h1 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(44px,6.4vw,76px);line-height:1.06;letter-spacing:.01em;margin:34px 0 30px">Flying, the way it was<br>always meant to feel.</h1>
+    <p data-cn="1" style="color:#6E675C;max-width:520px;margin:0 auto 46px;font-size:17px;line-height:2">整舱私享，私人航站楼，从车门到舱门十五分钟——同行的，是值得同行的人。为年轻一代而设。</p>
+    <p data-en="1" style="display:none;color:#6E675C;max-width:560px;margin:0 auto 46px;font-size:17.5px;line-height:1.85">Whole cabins. Private terminals. Fifteen minutes from car door to cabin door — and a room of people worth the trip. For the next generation of flyers.</p>
+    <a data-cn="1" data-disp="inline-block" href="#join" style="display:inline-block;background:#16130E;color:#F5F1E8;padding:17px 52px;text-decoration:none;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">申请邀请</a>
+    <a data-en="1" data-disp="inline-block" href="#join" style="display:none;background:#16130E;color:#F5F1E8;padding:17px 52px;text-decoration:none;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">Request an Invitation</a>
+    <span data-cn="1" data-disp="block" style="display:block;margin-top:18px;font-size:12.5px;color:#6E675C;letter-spacing:.14em">创始一百席 · 洛杉矶首发</span>
+    <span data-en="1" data-disp="block" style="display:none;margin-top:18px;font-size:12.5px;color:#6E675C;letter-spacing:.14em">The Founding Hundred · Los Angeles first</span>
+  </div>
+  <sc-if value="{{ showHeroImg }}" hint-placeholder-val="{{ true }}">
+    <div data-fade="1" style="padding-bottom:40px">
+      <div style="overflow:hidden;aspect-ratio:21/9;background:#EFE9DC">
+        <image-slot id="hero-golden" src="pic/hero-golden.webp" shape="rect" placeholder="场景库 · 黄金时刻（全幅）— 黄昏侧逆光，人影走向舷梯，长影，机身局部反光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:12px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8B8375">
+        <span>Golden Hour · 黄金时刻</span><span>Los Angeles</span>
+      </div>
+    </div>
+  </sc-if>
+</section>
+
+<!-- SCENES -->
+<section data-screen-label="Scenes 场景" style="max-width:1140px;margin:0 auto;padding:80px 32px 110px">
+  <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16);padding-top:24px;margin-bottom:60px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#A5834B">01</span>
+      <span data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">会员的时刻</span>
+      <span data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">Where members find themselves</span>
+    </div>
+    <h2 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(28px,3.4vw,38px);line-height:1.35;letter-spacing:.03em;margin:20px 0 0">有些时刻，值得更好的方式。</h2>
+    <h2 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,40px);line-height:1.18;margin:20px 0 0">Some hours deserve better.</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:56px 30px">
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-golden-hour" src="pic/scene-golden-hour.webp" shape="rect" placeholder="场景库 01 · 黄金时刻 — 黄昏侧逆光，人影走向舷梯，长影" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">01</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">黄金时刻</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Golden Hour</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">一天里，最值得的一小时。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">The hour the day earns.</span>
+    </div>
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-vegas" src="pic/scene-vegas.webp" shape="rect" placeholder="场景库 02 · Vegas 之夜 — 夜航舷窗俯瞰灯海，舱内暗，杯沿一点反光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">02</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Vegas 之夜</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Vegas Nights</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">离今晚，更近一点。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">Land closer to the night.</span>
+    </div>
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-powder" src="pic/scene-powder.webp" shape="rect" placeholder="场景库 03 · 粉雪日 — 舷窗框住雪山进近（Aspen），前景热咖啡与手套" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">03</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">粉雪日</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Powder Days</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">头道雪，从登机那一刻开始。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">First tracks start at boarding.</span>
+    </div>
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-graduation" src="pic/scene-graduation.webp" shape="rect" placeholder="场景库 04 · 毕业周 — 舷梯全员合影，学位帽抛起，正午硬光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">04</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">毕业周</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Graduation Week</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">有些里程碑，值得整舱纪念。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">Some milestones deserve a cabin.</span>
+    </div>
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-party" src="pic/scene-party.webp" shape="rect" placeholder="场景库 05 · 全员登机 — 金毛系安全带坐窗边望窗外，主人的手入画" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">05</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">全员登机</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">Window Seat, Party of Six</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">一个都不落下。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">Everyone boards.</span>
+    </div>
+    <div data-fade="1">
+      <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
+        <image-slot id="scene-office" src="pic/scene-office.webp" shape="rect" placeholder="场景库 06 · 云端办公室 — 桌板 MacBook 与咖啡，平流层云海，冷静光线" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
+        <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">06</span>
+        <b data-cn="1" style="font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">云端办公室</b>
+        <b data-en="1" style="display:none;font-weight:400;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#16130E">The Cabin Office</b>
+      </div>
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15px;color:#4C463C">三城一日，晚饭前到家。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:#4C463C">Three cities, one day, home by dinner.</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE INTERLUDE -->
+<section data-screen-label="Quote 引言" style="max-width:1140px;margin:0 auto;padding:0 32px">
+  <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16);border-bottom:1px solid rgba(22,19,14,.16);padding:110px 24px;text-align:center">
+    <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(28px,3.8vw,44px);line-height:1.3;max-width:820px;margin:0 auto">&ldquo;Some clubs have a door.<br>Ours has a runway.&rdquo;</div>
+    <div data-cn="1" style="margin-top:26px;font-size:13.5px;letter-spacing:.12em;color:#6E675C">一家恰好以飞行为载体的会员制俱乐部。</div>
+    <div data-en="1" style="display:none;margin-top:26px;font-size:13px;letter-spacing:.16em;color:#6E675C">A members&#39; club that happens to fly.</div>
+  </div>
+</section>
+
+<!-- THE LIST -->
+<section data-screen-label="The List 航单" style="max-width:1140px;margin:0 auto;padding:110px 32px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:72px;align-items:center">
+    <div data-fade="1">
+      <div style="display:flex;align-items:baseline;gap:18px">
+        <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#A5834B">02</span>
+        <span data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">每周 · 航单</span>
+        <span data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">Each week, The List</span>
+      </div>
+      <h2 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(26px,3vw,34px);line-height:1.45;letter-spacing:.03em;margin:20px 0 0">只向会员开放的<br>私人航班精选。</h2>
+      <h2 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(28px,3.2vw,38px);line-height:1.2;margin:20px 0 0">A curated list of private flights, for members only.</h2>
+      <p data-cn="1" style="color:#6E675C;font-size:15.5px;line-height:2;margin:22px 0 0;max-width:520px">每周，合作机队飞行在会员最常出没的航线上。航单把它们第一时间带到你面前——以会员礼遇价私享整舱，或与你的人同舱。其余一切，交给你的礼宾。</p>
+      <p data-en="1" style="display:none;color:#6E675C;font-size:16px;line-height:1.85;margin:22px 0 0;max-width:540px">Every week, our partners&#39; aircraft cross the routes our members live on. The List brings them to you first — claim a whole cabin at members&#39; fare, or share it with your circle. Your concierge handles the rest.</p>
+    </div>
+    <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16)">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 2px;border-bottom:1px solid rgba(22,19,14,.16)">
+        <b data-cn="1" style="font-weight:500;font-size:15.5px">洛杉矶 ↔ 拉斯维加斯</b><b data-en="1" style="display:none;font-weight:500;font-size:15.5px">Los Angeles ↔ Las Vegas</b>
+        <span data-cn="1" style="color:#6E675C;font-size:12px;letter-spacing:.14em">全年</span><span data-en="1" style="display:none;color:#6E675C;font-size:12px;letter-spacing:.14em">Year-round</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 2px;border-bottom:1px solid rgba(22,19,14,.16)">
+        <b data-cn="1" style="font-weight:500;font-size:15.5px">洛杉矶 ↔ 湾区</b><b data-en="1" style="display:none;font-weight:500;font-size:15.5px">Los Angeles ↔ The Bay</b>
+        <span data-cn="1" style="color:#6E675C;font-size:12px;letter-spacing:.14em">全年</span><span data-en="1" style="display:none;color:#6E675C;font-size:12px;letter-spacing:.14em">Year-round</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 2px;border-bottom:1px solid rgba(22,19,14,.16)">
+        <b data-cn="1" style="font-weight:500;font-size:15.5px">雪山 — Aspen 及更远</b><b data-en="1" style="display:none;font-weight:500;font-size:15.5px">The Mountains — Aspen &amp; beyond</b>
+        <span data-cn="1" style="color:#6E675C;font-size:12px;letter-spacing:.14em">应季</span><span data-en="1" style="display:none;color:#6E675C;font-size:12px;letter-spacing:.14em">In season</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 2px;border-bottom:1px solid rgba(22,19,14,.16)">
+        <b data-cn="1" style="font-weight:500;font-size:15.5px">海岸 — Cabo 及更远</b><b data-en="1" style="display:none;font-weight:500;font-size:15.5px">The Coast — Cabo &amp; beyond</b>
+        <span data-cn="1" style="color:#6E675C;font-size:12px;letter-spacing:.14em">应季</span><span data-en="1" style="display:none;color:#6E675C;font-size:12px;letter-spacing:.14em">In season</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 2px;border-bottom:1px solid rgba(22,19,14,.16)">
+        <b data-cn="1" style="font-weight:500;font-size:15.5px">盛事周末 — F1 · 音乐节 · 总决赛</b><b data-en="1" style="display:none;font-weight:500;font-size:15.5px">Event weekends — F1, festivals, finals</b>
+        <span data-cn="1" style="color:#6E675C;font-size:12px;letter-spacing:.14em">日历</span><span data-en="1" style="display:none;color:#6E675C;font-size:12px;letter-spacing:.14em">The calendar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP · NIGHT -->
+<section data-screen-label="Membership 会籍（夜空段）" style="background:#14161D;color:#F5F1E8">
+  <div style="max-width:1140px;margin:0 auto;padding:130px 32px 120px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:80px;align-items:center">
+      <div data-fade="1">
+        <svg viewBox="0 0 320 300" style="width:100%;max-width:430px;height:auto;display:block" aria-label="Auriga constellation 御夫座五星连线">
+          <circle cx="36" cy="40" r="1" fill="#F5F1E8" opacity=".22"></circle>
+          <circle cx="120" cy="22" r="1" fill="#F5F1E8" opacity=".18"></circle>
+          <circle cx="255" cy="36" r="1.2" fill="#F5F1E8" opacity=".25"></circle>
+          <circle cx="300" cy="88" r="1" fill="#F5F1E8" opacity=".2"></circle>
+          <circle cx="288" cy="188" r="1" fill="#F5F1E8" opacity=".22"></circle>
+          <circle cx="252" cy="272" r="1.2" fill="#F5F1E8" opacity=".2"></circle>
+          <circle cx="150" cy="286" r="1" fill="#F5F1E8" opacity=".18"></circle>
+          <circle cx="42" cy="258" r="1" fill="#F5F1E8" opacity=".22"></circle>
+          <circle cx="20" cy="170" r="1.2" fill="#F5F1E8" opacity=".25"></circle>
+          <circle cx="84" cy="66" r="1" fill="#F5F1E8" opacity=".18"></circle>
+          <circle cx="196" cy="70" r="1" fill="#F5F1E8" opacity=".2"></circle>
+          <circle cx="230" cy="150" r="1" fill="#F5F1E8" opacity=".16"></circle>
+          <circle cx="120" cy="150" r="1" fill="#F5F1E8" opacity=".16"></circle>
+          <circle cx="176" cy="210" r="1" fill="#F5F1E8" opacity=".18"></circle>
+          <polyline id="constLine" points="150,45 237,110 210,225 95,235 62,120 150,45" fill="none" stroke="rgba(245,241,232,.5)" stroke-width="0.75"></polyline>
+          <circle data-star="1" cx="150" cy="45" r="3.6" fill="#EFE9DC"></circle>
+          <circle data-star="1" cx="237" cy="110" r="2.2" fill="#F5F1E8" opacity=".92"></circle>
+          <circle data-star="1" cx="210" cy="225" r="2.2" fill="#F5F1E8" opacity=".92"></circle>
+          <circle data-star="1" cx="95" cy="235" r="2.2" fill="#F5F1E8" opacity=".92"></circle>
+          <circle data-star="1" cx="62" cy="120" r="2.2" fill="#F5F1E8" opacity=".92"></circle>
+          <text x="150" y="26" text-anchor="middle" style="font-size:9px;letter-spacing:.28em;fill:#9AA0AD;font-family:'Helvetica Neue','PingFang SC',sans-serif">CAPELLA · 五车二</text>
+        </svg>
+        <p data-cn="1" style="margin:26px 0 0;font-size:12.5px;line-height:1.9;color:#9AA0AD;max-width:400px">御夫座——驾驭天空之车者。主星五车二（Capella），全天最亮恒星之一。</p>
+        <p data-en="1" style="display:none;margin:26px 0 0;font-size:12.5px;line-height:1.9;color:#9AA0AD;max-width:400px">Auriga, the Charioteer — one who drives the sky. Its lead star, Capella, is among the brightest of all.</p>
+      </div>
+      <div data-fade="1">
+        <div style="display:flex;align-items:baseline;gap:18px">
+          <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#C9AA74">03</span>
+          <span data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#C9AA74">会籍</span>
+          <span data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#C9AA74">Membership</span>
+        </div>
+        <h2 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(30px,3.6vw,42px);letter-spacing:.04em;line-height:1.3;margin:20px 0 34px">时间，归你。</h2>
+        <h2 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(34px,4vw,48px);line-height:1.1;margin:20px 0 34px">Own the hours.</h2>
+        <div style="border:1px solid rgba(245,241,232,.18);padding:44px 42px">
+          <div data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#C9AA74">创始一百席</div>
+          <div data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#C9AA74">The Founding Hundred</div>
+          <h3 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:26px;letter-spacing:.03em;margin:16px 0 8px">创始会籍</h3>
+          <h3 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:29px;margin:16px 0 8px">Founding Membership</h3>
+          <div data-cn="1" style="font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#C9AA74;margin-bottom:26px">$999/年 · 三年礼遇价 · 凭邀请</div>
+          <div data-en="1" style="display:none;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:#C9AA74;margin-bottom:26px">$999 a year · held for three years · by invitation</div>
+          <ul style="list-style:none;margin:0 0 32px;padding:0;font-size:15px;color:#B9BFC9">
+            <li data-cn="1" style="padding:8px 0">每周航单的第一顺位</li><li data-en="1" style="display:none;padding:8px 0">First access to The List, every week</li>
+            <li data-cn="1" style="padding:8px 0">终身创始编号</li><li data-en="1" style="display:none;padding:8px 0">The founding number — yours for life</li>
+            <li data-cn="1" style="padding:8px 0">会员晚宴与俱乐部日历，洛杉矶首发</li><li data-en="1" style="display:none;padding:8px 0">Member dinners &amp; the club calendar, Los Angeles first</li>
+            <li data-cn="1" style="padding:8px 0">下一站航线与体验的共创席位</li><li data-en="1" style="display:none;padding:8px 0">A voice in what we build next</li>
+          </ul>
+          <a data-cn="1" data-disp="inline-block" href="#join" style="display:inline-block;background:#F5F1E8;color:#16130E;padding:16px 46px;text-decoration:none;font-size:12px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #F5F1E8;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#F5F1E8">申请邀请</a>
+          <a data-en="1" data-disp="inline-block" href="#join" style="display:none;background:#F5F1E8;color:#16130E;padding:16px 46px;text-decoration:none;font-size:12px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #F5F1E8;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#F5F1E8">Request an Invitation</a>
+        </div>
+        <p data-cn="1" style="font-size:13px;color:#8B909B;margin:22px 0 0;line-height:1.9">创始席之后：社交会籍 $1,800 · 30 岁以下 $1,200 · 优先会籍 $4,800。</p>
+        <p data-en="1" style="display:none;font-size:13px;color:#8B909B;margin:22px 0 0;line-height:1.9">Following the Founding Hundred: Social membership $1,800 · under-30 $1,200 · Priority $4,800.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARD -->
+<section data-screen-label="Our Standard 标准" style="max-width:1140px;margin:0 auto;padding:110px 32px">
+  <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16);padding-top:24px;margin-bottom:56px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#A5834B">04</span>
+      <span data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">我们的标准</span>
+      <span data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">Our standard</span>
+    </div>
+    <h2 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(28px,3.4vw,38px);letter-spacing:.03em;line-height:1.35;margin:20px 0 0">安静地，不妥协。</h2>
+    <h2 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,40px);line-height:1.18;margin:20px 0 0">Quietly uncompromising.</h2>
+  </div>
+  <div data-fade="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid rgba(22,19,14,.16);border-left:1px solid rgba(22,19,14,.16)">
+    <div style="padding:34px 28px;border-right:1px solid rgba(22,19,14,.16);border-bottom:1px solid rgba(22,19,14,.16)">
+      <b data-cn="1" data-disp="block" style="display:block;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">持证执飞</b>
+      <b data-en="1" data-disp="block" style="display:none;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">Certified partners</b>
+      <p data-cn="1" style="margin:0;font-size:14px;line-height:1.95;color:#6E675C">每一班都由 FAA Part 135 持证承运人执飞。登机之前，你清楚知道由谁执飞。</p>
+      <p data-en="1" style="display:none;margin:0;font-size:14.5px;line-height:1.8;color:#6E675C">Every flight is operated by an FAA-certificated Part 135 carrier. You&#39;ll know exactly who flies you, before you board.</p>
+    </div>
+    <div style="padding:34px 28px;border-right:1px solid rgba(22,19,14,.16);border-bottom:1px solid rgba(22,19,14,.16)">
+      <b data-cn="1" data-disp="block" style="display:block;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">条款终身锁定</b>
+      <b data-en="1" data-disp="block" style="display:none;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">Terms held for life</b>
+      <p data-cn="1" style="margin:0;font-size:14px;line-height:1.95;color:#6E675C">你入会那天的条款，就是你一直的条款。</p>
+      <p data-en="1" style="display:none;margin:0;font-size:14.5px;line-height:1.8;color:#6E675C">The terms you join on are the terms you keep.</p>
+    </div>
+    <div style="padding:34px 28px;border-right:1px solid rgba(22,19,14,.16);border-bottom:1px solid rgba(22,19,14,.16)">
+      <b data-cn="1" data-disp="block" style="display:block;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">变化，已有安排</b>
+      <b data-en="1" data-disp="block" style="display:none;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">Plan B, handled</b>
+      <p data-cn="1" style="margin:0;font-size:14px;line-height:1.95;color:#6E675C">私人航班的日程会流动。当它变化时，你的礼宾已经备好选项——票款全额奉还，并附上我们的心意。</p>
+      <p data-en="1" style="display:none;margin:0;font-size:14.5px;line-height:1.8;color:#6E675C">Private schedules move. When they do, your concierge already has options — and your fare returns in full, with our compliments.</p>
+    </div>
+    <div style="padding:34px 28px;border-right:1px solid rgba(22,19,14,.16);border-bottom:1px solid rgba(22,19,14,.16)">
+      <b data-cn="1" data-disp="block" style="display:block;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">是一间房间，不是一个 App</b>
+      <b data-en="1" data-disp="block" style="display:none;font-weight:400;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#A5834B;margin-bottom:14px">A room, not an app</b>
+      <p data-cn="1" style="margin:0;font-size:14px;line-height:1.95;color:#6E675C">晚宴、周末与引荐。这个俱乐部在地面上的部分，和在天上的一样重要。</p>
+      <p data-en="1" style="display:none;margin:0;font-size:14.5px;line-height:1.8;color:#6E675C">Dinners, weekends, introductions. The club exists on the ground as much as in the air.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section data-screen-label="FAQ" style="max-width:1140px;margin:0 auto;padding:0 32px 110px">
+  <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16);padding-top:24px;margin-bottom:44px">
+    <div style="display:flex;align-items:baseline;gap:18px">
+      <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#A5834B">05</span>
+      <span style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">FAQ</span>
+    </div>
+  </div>
+  <div data-fade="1" style="max-width:780px">
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">会员航班是怎么运作的？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">How do member flights work?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">合作机队每周在美西执飞数百个私人航段。航单从中为会员精选——整舱、会员礼遇价、每周发布、先到先飞。细节由你的礼宾在数小时内确认。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">Our fleet partners fly hundreds of private sectors weekly across the West. The List curates the finest of them for members — whole cabins at members&#39; fare, released each week, first come, first flown. Your concierge confirms details within hours.</p>
+    </details>
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">谁来执飞？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">Who operates the aircraft?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">始终是 FAA Part 135 持证承运人。Auriga 是会员俱乐部与持牌包机经纪；每次预订前，执飞承运人都会向你完整披露。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">FAA-certificated Part 135 air carriers, always. Auriga is a members&#39; club and licensed charter broker; the operating carrier is disclosed to you before every booking.</p>
+    </details>
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">可以带朋友和宠物吗？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">Can I bring my people — and my dog?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">整舱是你的。带上你的人；宠物坐客舱，就在你身边。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">The cabin is yours. Bring your five, and yes — dogs ride cabin, beside you.</p>
+    </details>
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">会籍包含什么？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">What does membership include?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">航单权限、俱乐部日历、会员引荐与专属礼宾。航班按次以会员礼遇价预订——会籍是钥匙，不是计价器。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">Access to The List, the club calendar, member introductions, and your concierge. Flights are booked at members&#39; fare, per trip — membership is the key, not the meter.</p>
+    </details>
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">如何获得邀请？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">How do I get invited?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">在下方提交申请，最好附上推荐会员。我们分小批审核——房间的质感，来自门槛。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">Request below, ideally with a referring member. We review in small batches to keep the room what it is.</p>
+    </details>
+    <details style="border-bottom:1px solid rgba(22,19,14,.16);padding:22px 0">
+      <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:18px">
+        <span data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:16.5px">支付方式？</span>
+        <span data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:18.5px">How can I pay?</span>
+        <span data-marker="1" style="color:#A5834B;font-family:Georgia,serif;font-size:18px;flex-shrink:0">+</span>
+      </summary>
+      <p data-cn="1" style="margin:14px 0 4px;font-size:14.5px;line-height:2;color:#6E675C;max-width:640px">支持银行卡、电汇、USDC（持牌通道）；也支持支付宝/微信，账单可开具给家人。</p>
+      <p data-en="1" style="display:none;margin:14px 0 4px;font-size:15px;line-height:1.85;color:#6E675C;max-width:640px">Card, wire, or USDC via a licensed processor.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="join" data-screen-label="Invitation 申请表单" style="max-width:1140px;margin:0 auto;padding:0 32px 120px">
+  <div data-fade="1" style="border-top:1px solid rgba(22,19,14,.16);padding-top:24px;margin-bottom:52px;text-align:center">
+    <div style="display:flex;align-items:baseline;gap:18px;justify-content:center">
+      <span style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-style:italic;font-size:15px;color:#A5834B">06</span>
+      <span data-cn="1" style="font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">创始一百席</span>
+      <span data-en="1" style="display:none;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#A5834B">The Founding Hundred</span>
+    </div>
+    <h2 data-cn="1" style="font-family:'Noto Serif SC','Songti SC',serif;font-weight:900;font-size:clamp(28px,3.4vw,38px);letter-spacing:.04em;margin:20px 0 0">申请邀请。</h2>
+    <h2 data-en="1" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,3.6vw,40px);margin:20px 0 0">Request an invitation.</h2>
+  </div>
+  <form data-fade="1" onSubmit="{{ onSubmit }}" style="max-width:560px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 22px">
+      <div>
+        <label data-cn="1" data-disp="block" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">姓名</label>
+        <label data-en="1" data-disp="block" style="display:none;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">Name</label>
+        <input name="name" required="required" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B" />
+      </div>
+      <div>
+        <label style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">Email</label>
+        <input name="email" type="email" required="required" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B" />
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 22px">
+      <div>
+        <label data-cn="1" data-disp="block" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">城市</label>
+        <label data-en="1" data-disp="block" style="display:none;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">City</label>
+        <select name="city" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B">
+          <option>Los Angeles</option><option>SF Bay Area</option><option>Las Vegas</option><option>New York</option><option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label data-cn="1" data-disp="block" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">推荐人</label>
+        <label data-en="1" data-disp="block" style="display:none;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">Referred by</label>
+        <input name="referral" placeholder="—" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B" />
+      </div>
+    </div>
+    <label data-cn="1" data-disp="block" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">对你来说，理想的飞行是什么样的？</label>
+    <label data-en="1" data-disp="block" style="display:none;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">What should flying feel like, for you?</label>
+    <input name="note" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B" />
+    <button data-cn="1" data-submit="1" type="submit" style="display:block;width:100%;margin-top:44px;background:#16130E;color:#F5F1E8;padding:17px 46px;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;cursor:pointer;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">提交</button>
+    <button data-en="1" data-submit="1" data-disp="block" type="submit" style="display:none;width:100%;margin-top:44px;background:#16130E;color:#F5F1E8;padding:17px 46px;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;cursor:pointer;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">Submit</button>
+    <div id="okMsg" style="display:none;text-align:center;padding:34px 0 0;margin-top:28px;border-top:1px solid rgba(22,19,14,.16)">
+      <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15.5px;color:#A5834B">已收到。我们分小批审核——一位推荐人会让你更快入座。</span>
+      <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:16.5px;color:#A5834B">Received. We review in small batches — a referral moves you forward.</span>
+    </div>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<div data-screen-label="Footer" style="border-top:1px solid rgba(22,19,14,.16)">
+  <footer style="max-width:1140px;margin:0 auto;padding:64px 32px 84px;display:flex;justify-content:space-between;gap:56px;flex-wrap:wrap">
+    <div style="max-width:640px">
+      <div style="font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:15px;letter-spacing:.42em;text-indent:.42em;margin-bottom:22px">AURIGA</div>
+      <p style="margin:0;font-size:11.5px;line-height:1.95;color:#8B8375">Auriga is a members&#39; club and air charter broker, not a direct air carrier. All flights are operated by FAA-certificated Part 135 air carriers. Auriga does not own or operate aircraft. Membership fees purchase club services and do not constitute payment for air transportation. Seller of Travel: CST #[PENDING]. © 2026 Auriga, Inc.</p>
+    </div>
+    <div style="display:flex;gap:22px;align-items:flex-start">
+      <svg viewBox="0 0 120 120" style="width:64px;height:64px;display:block" aria-label="御者之环徽记">
+        <circle cx="60" cy="60" r="57" fill="none" stroke="#16130E" stroke-width="1"></circle>
+        <polyline points="60,22 88,44 78,80 42,83 33,47 60,22" fill="none" stroke="#16130E" stroke-width="0.75"></polyline>
+        <circle cx="60" cy="22" r="2.4" fill="#16130E"></circle>
+        <circle cx="88" cy="44" r="1.8" fill="#16130E"></circle>
+        <circle cx="78" cy="80" r="1.8" fill="#16130E"></circle>
+        <circle cx="42" cy="83" r="1.8" fill="#16130E"></circle>
+        <circle cx="33" cy="47" r="1.8" fill="#16130E"></circle>
+      </svg>
+      <div style="writing-mode:vertical-rl;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:13px;letter-spacing:.5em;border:1px solid rgba(22,19,14,.4);padding:14px 8px;color:#16130E">凌云座</div>
+    </div>
+  </footer>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;zh&quot;,&quot;en&quot;],&quot;default&quot;:&quot;zh&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;语言 Language&quot;},&quot;showHeroImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;版式 Layout&quot;},&quot;animate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;动效 Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const res = window.__resources;
+    if (res) document.querySelectorAll('#auriga-root image-slot').forEach(s => {
+      const id = s.getAttribute('id');
+      if (id && res[id]) s.setAttribute('src', res[id]);
+    });
+    this.lang = this.props.defaultLang ?? 'zh';
+    this.applyLang();
+    document.querySelectorAll('#auriga-root details').forEach(d => {
+      d.addEventListener('toggle', () => {
+        const m = d.querySelector('[data-marker]');
+        if (m) m.textContent = d.open ? '\u2014' : '+';
+      });
+    });
+    if (this.props.animate ?? true) this.setupMotion();
+  }
+  componentDidUpdate(prev) {
+    if (prev.defaultLang !== this.props.defaultLang) this.lang = this.props.defaultLang ?? 'zh';
+    requestAnimationFrame(() => this.applyLang());
+  }
+  applyLang() {
+    const zh = this.lang === 'zh';
+    document.documentElement.lang = zh ? 'zh-CN' : 'en';
+    const show = el => { el.style.display = el.getAttribute('data-disp') || ''; };
+    const hide = el => { el.style.display = 'none'; };
+    document.querySelectorAll('#auriga-root [data-cn]').forEach(zh ? show : hide);
+    document.querySelectorAll('#auriga-root [data-en]').forEach(zh ? hide : show);
+    const zhL = document.querySelector('#langToggle [data-l-zh]');
+    const enL = document.querySelector('#langToggle [data-l-en]');
+    if (zhL) zhL.style.opacity = zh ? '1' : '.35';
+    if (enL) enL.style.opacity = zh ? '.35' : '1';
+  }
+  setupMotion() {
+    const els = document.querySelectorAll('#auriga-root [data-fade]');
+    els.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+    });
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.style.opacity = '1';
+        en.target.style.transform = 'none';
+        io.unobserve(en.target);
+      }
+    }), { threshold: 0.1 });
+    els.forEach(el => io.observe(el));
+    const line = document.getElementById('constLine');
+    if (line) {
+      const L = line.getTotalLength();
+      line.style.strokeDasharray = L;
+      line.style.strokeDashoffset = L;
+      const dots = document.querySelectorAll('#auriga-root [data-star]');
+      dots.forEach((d, i) => {
+        d.style.opacity = '0';
+        d.style.transition = 'opacity .5s ease ' + (0.4 + i * 0.22) + 's';
+      });
+      const io2 = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) {
+          line.style.transition = 'stroke-dashoffset 1.8s ease .2s';
+          line.style.strokeDashoffset = '0';
+          dots.forEach(d => { d.style.opacity = '1'; });
+          io2.disconnect();
+        }
+      }), { threshold: 0.5 });
+      io2.observe(line);
+    }
+  }
+  renderVals() {
+    return {
+      showHeroImg: this.props.showHeroImage ?? true,
+      toggleLang: () => { this.lang = this.lang === 'zh' ? 'en' : 'zh'; this.applyLang(); },
+      onSubmit: e => {
+        e.preventDefault();
+        e.target.querySelectorAll('[data-submit]').forEach(b => { b.style.display = 'none'; });
+        const ok = document.getElementById('okMsg');
+        if (ok) ok.style.display = 'block';
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
