@@ -413,11 +413,16 @@ input,select,button{font:inherit}
     <label data-cn="1" data-disp="block" style="display:block;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">对你来说，理想的飞行是什么样的？</label>
     <label data-en="1" data-disp="block" style="display:none;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#6E675C;margin:24px 0 6px">What should flying feel like, for you?</label>
     <input name="note" style="width:100%;box-sizing:border-box;background:transparent;border:none;border-bottom:1px solid rgba(22,19,14,.16);border-radius:0;padding:10px 2px;color:#16130E;font-size:16px;outline:none;transition:border-color .4s ease" style-focus="border-bottom-color:#A5834B" />
+    <input name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
     <button data-cn="1" data-submit="1" type="submit" style="display:block;width:100%;margin-top:44px;background:#16130E;color:#F5F1E8;padding:17px 46px;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;cursor:pointer;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">提交</button>
     <button data-en="1" data-submit="1" data-disp="block" type="submit" style="display:none;width:100%;margin-top:44px;background:#16130E;color:#F5F1E8;padding:17px 46px;font-size:12.5px;letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;border:1px solid #16130E;cursor:pointer;transition:background .4s ease,color .4s ease" style-hover="background:transparent;color:#16130E">Submit</button>
     <div id="okMsg" style="display:none;text-align:center;padding:34px 0 0;margin-top:28px;border-top:1px solid rgba(22,19,14,.16)">
       <span data-cn="1" data-disp="block" style="display:block;font-family:'Noto Serif SC','Songti SC',serif;font-weight:700;font-size:15.5px;color:#A5834B">已收到。我们分小批审核——一位推荐人会让你更快入座。</span>
       <span data-en="1" data-disp="block" style="display:none;font-family:Didot,'Bodoni 72','Playfair Display',Georgia,serif;font-size:16.5px;color:#A5834B">Received. We review in small batches — a referral moves you forward.</span>
+    </div>
+    <div id="errMsg" style="display:none;text-align:center;padding:20px 0 0;font-size:12.5px;letter-spacing:.06em;color:#8B4A3C">
+      <span data-cn="1" data-disp="block" style="display:block">提交未成功，请稍后重试，或直接来信 <a href="mailto:founders@aurigair.com">founders@aurigair.com</a>。</span>
+      <span data-en="1" data-disp="block" style="display:none">Something went wrong. Please try again, or write to <a href="mailto:founders@aurigair.com">founders@aurigair.com</a>.</span>
     </div>
   </form>
 </section>
@@ -520,11 +525,28 @@ class Component extends DCLogic {
     return {
       showHeroImg: this.props.showHeroImage ?? true,
       toggleLang: () => { this.lang = this.lang === 'zh' ? 'en' : 'zh'; this.applyLang(); },
-      onSubmit: e => {
+      onSubmit: async e => {
         e.preventDefault();
-        e.target.querySelectorAll('[data-submit]').forEach(b => { b.style.display = 'none'; });
+        const form = e.target;
+        const btns = [...form.querySelectorAll('[data-submit]')];
         const ok = document.getElementById('okMsg');
-        if (ok) ok.style.display = 'block';
+        const err = document.getElementById('errMsg');
+        if (err) err.style.display = 'none';
+        btns.forEach(b => { b.disabled = true; b.style.opacity = '.5'; b.style.cursor = 'wait'; });
+        try {
+          const res = await fetch('/api/apply', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(new FormData(form))),
+          });
+          if (!res.ok) throw new Error('submit failed: ' + res.status);
+          btns.forEach(b => { b.style.display = 'none'; });
+          if (ok) ok.style.display = 'block';
+        } catch (ex) {
+          console.error(ex);
+          if (err) err.style.display = 'block';
+          btns.forEach(b => { b.disabled = false; b.style.opacity = '1'; b.style.cursor = 'pointer'; });
+        }
       }
     };
   }
