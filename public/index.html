@@ -21,7 +21,7 @@ summary::-webkit-details-marker{display:none}
 input,select,button{font:inherit}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{-webkit-tap-highlight-color:transparent}
-img,image-slot{max-width:100%}
+img{max-width:100%}
 @media (max-width:600px){
   #langToggle{padding:14px 0 !important}
   #auriga-root summary{padding:8px 0 !important}
@@ -29,14 +29,6 @@ img,image-slot{max-width:100%}
   #auriga-root footer{padding-bottom:calc(84px + env(safe-area-inset-bottom)) !important}
 }
 </style>
-<script src="image-slot.js"></script>
-<meta name="ext-resource-dependency" content="pic/hero-golden.webp" data-resource-id="hero-golden" />
-<meta name="ext-resource-dependency" content="pic/scene-golden-hour.webp" data-resource-id="scene-golden-hour" />
-<meta name="ext-resource-dependency" content="pic/scene-vegas.webp" data-resource-id="scene-vegas" />
-<meta name="ext-resource-dependency" content="pic/scene-powder.webp" data-resource-id="scene-powder" />
-<meta name="ext-resource-dependency" content="pic/scene-graduation.webp" data-resource-id="scene-graduation" />
-<meta name="ext-resource-dependency" content="pic/scene-party.webp" data-resource-id="scene-party" />
-<meta name="ext-resource-dependency" content="pic/scene-office.webp" data-resource-id="scene-office" />
 </helmet>
 <template id="__bundler_thumbnail" data-bg-color="#F5F1E8"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#F5F1E8"></rect><circle cx="60" cy="60" r="34" fill="none" stroke="#16130E" stroke-width="1"></circle><polyline points="60,38 76,50 71,71 50,73 45,52 60,38" fill="none" stroke="#16130E" stroke-width="0.8"></polyline><circle cx="60" cy="38" r="1.6" fill="#16130E"></circle><circle cx="76" cy="50" r="1.2" fill="#16130E"></circle><circle cx="71" cy="71" r="1.2" fill="#16130E"></circle><circle cx="50" cy="73" r="1.2" fill="#16130E"></circle><circle cx="45" cy="52" r="1.2" fill="#16130E"></circle></svg></template>
 <div id="auriga-root">
@@ -72,7 +64,7 @@ img,image-slot{max-width:100%}
   <sc-if value="{{ showHeroImg }}" hint-placeholder-val="{{ true }}">
     <div data-fade="1" style="padding-bottom:40px">
       <div style="overflow:hidden;aspect-ratio:21/9;background:#EFE9DC">
-        <image-slot id="hero-golden" src="pic/hero-golden.webp" shape="rect" placeholder="场景库 · 黄金时刻（全幅）— 黄昏侧逆光，人影走向舷梯，长影，机身局部反光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="hero-golden" src="pic/hero-golden.webp" alt="黄昏时分，一位旅客提着行李走向私人飞机舷梯，远处是洛杉矶天际线" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;justify-content:space-between;margin-top:12px;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8B8375">
         <span>Golden Hour · 黄金时刻</span><span>Los Angeles</span>
@@ -95,7 +87,7 @@ img,image-slot{max-width:100%}
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:56px 30px">
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-golden-hour" src="pic/scene-golden-hour.webp" shape="rect" placeholder="场景库 01 · 黄金时刻 — 黄昏侧逆光，人影走向舷梯，长影" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-golden-hour" src="pic/scene-golden-hour.webp" alt="黄金时刻 · 黄昏侧逆光下走向舷梯的身影" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">01</span>
@@ -107,7 +99,7 @@ img,image-slot{max-width:100%}
     </div>
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-vegas" src="pic/scene-vegas.webp" shape="rect" placeholder="场景库 02 · Vegas 之夜 — 夜航舷窗俯瞰灯海，舱内暗，杯沿一点反光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-vegas" src="pic/scene-vegas.webp" alt="Vegas 之夜 · 夜航舷窗俯瞰城市灯海" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">02</span>
@@ -119,7 +111,7 @@ img,image-slot{max-width:100%}
     </div>
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-powder" src="pic/scene-powder.webp" shape="rect" placeholder="场景库 03 · 粉雪日 — 舷窗框住雪山进近（Aspen），前景热咖啡与手套" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-powder" src="pic/scene-powder.webp" alt="粉雪日 · 舷窗框住雪山进近" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">03</span>
@@ -131,7 +123,7 @@ img,image-slot{max-width:100%}
     </div>
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-graduation" src="pic/scene-graduation.webp" shape="rect" placeholder="场景库 04 · 毕业周 — 舷梯全员合影，学位帽抛起，正午硬光" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-graduation" src="pic/scene-graduation.webp" alt="毕业周 · 舷梯前抛起学位帽的全员合影" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">04</span>
@@ -143,7 +135,7 @@ img,image-slot{max-width:100%}
     </div>
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-party" src="pic/scene-party.webp" shape="rect" placeholder="场景库 05 · 全员登机 — 金毛系安全带坐窗边望窗外，主人的手入画" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-party" src="pic/scene-party.webp" alt="全员登机 · 系好安全带望向窗外的金毛犬" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">05</span>
@@ -155,7 +147,7 @@ img,image-slot{max-width:100%}
     </div>
     <div data-fade="1">
       <div style="overflow:hidden;aspect-ratio:4/5;background:#EFE9DC">
-        <image-slot id="scene-office" src="pic/scene-office.webp" shape="rect" placeholder="场景库 06 · 云端办公室 — 桌板 MacBook 与咖啡，平流层云海，冷静光线" style="width:100%;height:100%;transition:transform .8s ease" style-hover="transform:scale(1.03)"></image-slot>
+        <img id="scene-office" src="pic/scene-office.webp" alt="云端办公室 · 平流层云海上的桌板与咖啡" loading="lazy" decoding="async" style="width:100%;height:100%;transition:transform .8s ease;object-fit:cover;display:block" style-hover="transform:scale(1.03)">
       </div>
       <div style="display:flex;align-items:baseline;gap:12px;margin:18px 0 8px">
         <span style="font-size:10px;letter-spacing:.2em;color:#A5834B">06</span>
@@ -464,11 +456,6 @@ img,image-slot{max-width:100%}
 <script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;zh&quot;,&quot;en&quot;],&quot;default&quot;:&quot;zh&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;语言 Language&quot;},&quot;showHeroImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;版式 Layout&quot;},&quot;animate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;动效 Motion&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
-    const res = window.__resources;
-    if (res) document.querySelectorAll('#auriga-root image-slot').forEach(s => {
-      const id = s.getAttribute('id');
-      if (id && res[id]) s.setAttribute('src', res[id]);
-    });
     this.lang = this.props.defaultLang ?? 'zh';
     this.applyLang();
     document.querySelectorAll('#auriga-root details').forEach(d => {
